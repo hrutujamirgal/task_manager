@@ -7,11 +7,12 @@ const UserSchema = new mongoose.Schema({
     status: {type:String, required:true, enum: ['Admin', 'NotAdmin'], default:"NotAdmin"},
 });
 
-// Password hashing 
-UserSchema.pre('save', async (next)=> {
-    if (!this.shouldHashPassword) {
-        return next(); 
+// Password hashing
+UserSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) {
+        return next();
     }
+
     try {
         const salt = await bcrypt.genSalt(10);
         this.password = await bcrypt.hash(this.password, salt);
@@ -20,6 +21,7 @@ UserSchema.pre('save', async (next)=> {
         next(error);
     }
 });
+
 
 // compare passwords
 UserSchema.methods.comparePassword = (password)=>{

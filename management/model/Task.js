@@ -7,8 +7,8 @@ const TaskSchema = new mongoose.Schema({
     dueDate: { type: Date },
     status: { type: String, enum: ['To Do', 'In Progress', 'Completed'], default: 'To Do' },
     priority: { type: String, enum: ['Low', 'Medium', 'High'], default: 'Low' },
-    assignedUser: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
-    assigningUser:{type: mongoose.Schema.Types.ObjectId, ref:'Users'},
+    assignedUser: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    assigningUser:{type: mongoose.Schema.Types.ObjectId, ref:'User'},
 });
 
 module.exports = mongoose.model('Task', TaskSchema);
