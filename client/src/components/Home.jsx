@@ -1,8 +1,8 @@
 import NavBar from "./NavBar";
-import Login from "./login";
+import Login from "./Login";
 import DataTable from "./DataTable";
 import Profile from "./Profile";
-import AddTask from "./addTask";
+import AddTask from "./AddTask";
 import UpdateTask from "./UpdateTask";
 import User from "./User";
 import { useAuth } from "../context/UserContext";
