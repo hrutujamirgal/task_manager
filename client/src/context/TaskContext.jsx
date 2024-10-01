@@ -10,7 +10,8 @@ export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
-  const route = "http://localhost:5000/api/tasks";
+  const task = import.meta.env.VITE_ROUTE;
+  const route = `${task}/api/tasks`;
 
   useEffect(() => {
     const fetchTasks = async () => {

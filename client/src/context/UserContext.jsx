@@ -8,7 +8,8 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [all, setAll] = useState([]);
-  const route = `http://localhost:5000/api/user`;
+  const userr = import.meta.env.VITE_ROUTE;
+  const route = `${userr}/api/user`;
 
     const login = async (username, password) => {
       try {
