@@ -133,7 +133,7 @@ const DataTable = () => {
       <>
         {record.assigningUser._id !== user.id && (
           <Button onClick={() => handleUpdate(record._id)} type="link">
-            Update Task Status
+            Update 
           </Button>
         )}
         {record.assigningUser._id === user.id && (
