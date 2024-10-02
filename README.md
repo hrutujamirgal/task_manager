@@ -35,3 +35,5 @@ The Task Management Application is a full-stack web application built using the 
 - **State Management**: Context API 
 - **Error Handling & Validation**: Joi 
 
+### Deployment URL:
+https://task-manager-lake-three.vercel.app/
